@@ -1,0 +1,9 @@
+*.class
+*~
+build/
+.project
+.classpath
+.idea
+*.iml
+out/
+*.tmp

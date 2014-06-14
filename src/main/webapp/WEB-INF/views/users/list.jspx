@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_disertatie_mylibrary_domain_User" items="${users}" z="enFwVnXDlYeJ/0UI6b8++eRO53A=">
+        <table:table data="${users}" id="l_com_disertatie_mylibrary_domain_User" path="/users" z="6E51zsJhtYnl+J4onqJJORbICzE=">
+            <table:column id="c_com_disertatie_mylibrary_domain_User_username" property="username" z="fEDGgddF/R8hK4t9jAfvaNUhm8Y="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_User_password" property="password" z="4x8OKSCRY3Q6ecSCO/t26vGrTDM="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_User_firstName" property="firstName" z="i32sODMitbVhR+AufeTjB1DPnX4="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_User_lastName" property="lastName" z="4K4/XsTHtRMC3P7ws6LRzDuIMLM="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_User_email" property="email" z="o11lTF51NqAfrNk2toukY6/VqAU="/>
+        </table:table>
+    </page:list>
+</div>

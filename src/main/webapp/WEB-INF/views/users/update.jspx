@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_disertatie_mylibrary_domain_User" modelAttribute="user" path="/users" versionField="none" z="hcgVRuVtP2DeuCQigoA5kPGW2xk=">
+        <field:input field="username" id="c_com_disertatie_mylibrary_domain_User_username" required="true" z="hljTBbxyMpIATZxUkUMCWOntf8Y="/>
+        <field:input field="password" id="c_com_disertatie_mylibrary_domain_User_password" required="true" z="BuoGBGD9dY0fHTGbXRjC/vaL5uI="/>
+        <field:input field="firstName" id="c_com_disertatie_mylibrary_domain_User_firstName" z="iagN+y1Fuw6mxybgYk4fg/QZDUE="/>
+        <field:input field="lastName" id="c_com_disertatie_mylibrary_domain_User_lastName" z="Sq7Sk7fsSq7aAoy/+OcAFsBTza4="/>
+        <field:input field="email" id="c_com_disertatie_mylibrary_domain_User_email" validationMessageCode="field_invalid_email" z="+QATKZZosEzNIeG6uiN+jZglJJA="/>
+    </form:update>
+</div>

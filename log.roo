@@ -1,0 +1,32 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-06-13 11:05:03
+download status
+download accept terms of use
+hint
+project --topLevelPackage com.disertatie.mylibrary
+jpa setup --provider HIBERNATE --database MYSQL 
+jpa setup --provider HIBERNATE --database MYSQL --databaseName mylibrary --userName root --password  B33f34t3r
+web mvc setup
+web mvc all --package ~.web
+// [failed] database introspect --schema no-schema-required 
+addon info id --searchResultId 01
+osgi obr url add --url http://spring-roo-repository.springsource.org/repository.xml
+osgi obr start --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java
+osgi obr url remove --url http://spring-roo-repository.springsource.org/repository.xml
+addon install id --searchResultId 01
+// [failed] addon install bundle --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;<5.1.18.0001>
+// [failed] addon install bundle --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;<version>
+osgi obr url add --url http://spring-roo-repository.springsource.org/repository.xml
+osgi obr start --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;5.1.18.0001
+osgi obr url remove --url http://spring-roo-repository.springsource.org/repository.xml
+addon install bundle --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;5.1.18.0001
+pgp trust --keyId 0xBF0451C0
+osgi obr url add --url http://spring-roo-repository.springsource.org/repository.xml
+osgi obr start --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;5.1.18.0001
+osgi obr url remove --url http://spring-roo-repository.springsource.org/repository.xml
+addon install bundle --bundleSymbolicName org.springframework.roo.wrapping.mysql-connector-java;5.1.18.0001
+database introspect --schema mylibrary
+database reverse engineer --schema mylibrary --package ~.domain
+web mvc all --package ~.web
+perform tests
+perform tests
+security setup
