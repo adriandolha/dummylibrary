@@ -10,22 +10,9 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 privileged aspect Category_Roo_DbManaged {
-    
-    @OneToOne(mappedBy = "category")
-    private Book Category.book;
-    
     @Column(name = "name", length = 45)
     @NotNull
     private String Category.name;
-    
-    public Book Category.getBook() {
-        return book;
-    }
-    
-    public void Category.setBook(Book book) {
-        this.book = book;
-    }
-    
     public String Category.getName() {
         return name;
     }

@@ -45,7 +45,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Book, String> ApplicationConversionServiceFactoryBean.getBookToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.disertatie.mylibrary.domain.Book, java.lang.String>() {
             public String convert(Book book) {
-                return new StringBuilder().append(book.getTitle()).append(' ').append(book.getCategoryId()).append(' ').append(book.getYear()).append(' ').append(book.getIsbn()).toString();
+                return new StringBuilder().append(book.getTitle()).append(' ').append(book.getCategory().getName()).append(' ').append(book.getYear()).append(' ').append(book.getIsbn()).toString();
             }
         };
     }

@@ -10,25 +10,13 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 privileged aspect Language_Roo_DbManaged {
-    
-    @OneToOne(mappedBy = "language")
-    private Book Language.book;
-    
     @Column(name = "name", length = 45)
     @NotNull
     private String Language.name;
     
     @Column(name = "description", length = 45)
     private String Language.description;
-    
-    public Book Language.getBook() {
-        return book;
-    }
-    
-    public void Language.setBook(Book book) {
-        this.book = book;
-    }
-    
+
     public String Language.getName() {
         return name;
     }

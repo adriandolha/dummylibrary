@@ -9,7 +9,6 @@
             <table:column id="c_com_disertatie_mylibrary_domain_Book_language" property="language" z="cJlYDii12Svk0Iw25I7aU62qFBQ="/>
             <table:column id="c_com_disertatie_mylibrary_domain_Book_author" property="author" z="aVmdIhx39gxFshrdcvJwZvxaHOA="/>
             <table:column id="c_com_disertatie_mylibrary_domain_Book_title" property="title" z="SHQ7RH+wwBX3dbAj9ZgISwy9BRs="/>
-            <table:column id="c_com_disertatie_mylibrary_domain_Book_categoryId" property="categoryId" z="ZO6seeQnLcs0LNrUDstPFKR/hzA="/>
         </table:table>
     </page:list>
 </div>

@@ -20,40 +20,32 @@ import org.springframework.format.annotation.DateTimeFormat;
 privileged aspect Book_Roo_DbManaged {
     
     @OneToOne
-    @JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "categoryId", nullable = false)
     private Category Book.category;
     
     @OneToOne
-    @JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "publisherId", nullable = false)
     private Publisher Book.publisher;
     
     @OneToOne
-    @JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "languageId", nullable = false)
     private Language Book.language;
     
     @OneToOne
-    @JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "authorId", nullable = false)
     private Author Book.author;
     
     @Column(name = "title", length = 45)
     @NotNull
     private String Book.title;
-    
-    @Column(name = "categoryId")
-    @NotNull
-    private Integer Book.categoryId;
-    
+
     @Column(name = "year")
     @NotNull
     private Integer Book.year;
     
     @Column(name = "ISBN", length = 45)
     private String Book.isbn;
-    
-    @Column(name = "publisherId")
-    @NotNull
-    private Integer Book.publisherId;
-    
+
     @Column(name = "volume", length = 45)
     private String Book.volume;
     
@@ -63,19 +55,10 @@ privileged aspect Book_Roo_DbManaged {
     @Column(name = "picture", length = 45)
     private String Book.picture;
     
-    @Column(name = "languageId", length = 45)
-    @NotNull
-    private String Book.languageId;
-    
     @Column(name = "dateAdded")
-    @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "MM")
     private Calendar Book.dateAdded;
-    
-    @Column(name = "authorId")
-    @NotNull
-    private Integer Book.authorId;
     
     public Category Book.getCategory() {
         return category;
@@ -117,14 +100,6 @@ privileged aspect Book_Roo_DbManaged {
         this.title = title;
     }
     
-    public Integer Book.getCategoryId() {
-        return categoryId;
-    }
-    
-    public void Book.setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-    
     public Integer Book.getYear() {
         return year;
     }
@@ -139,14 +114,6 @@ privileged aspect Book_Roo_DbManaged {
     
     public void Book.setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-    
-    public Integer Book.getPublisherId() {
-        return publisherId;
-    }
-    
-    public void Book.setPublisherId(Integer publisherId) {
-        this.publisherId = publisherId;
     }
     
     public String Book.getVolume() {
@@ -173,14 +140,6 @@ privileged aspect Book_Roo_DbManaged {
         this.picture = picture;
     }
     
-    public String Book.getLanguageId() {
-        return languageId;
-    }
-    
-    public void Book.setLanguageId(String languageId) {
-        this.languageId = languageId;
-    }
-    
     public Calendar Book.getDateAdded() {
         return dateAdded;
     }
@@ -188,13 +147,4 @@ privileged aspect Book_Roo_DbManaged {
     public void Book.setDateAdded(Calendar dateAdded) {
         this.dateAdded = dateAdded;
     }
-    
-    public Integer Book.getAuthorId() {
-        return authorId;
-    }
-    
-    public void Book.setAuthorId(Integer authorId) {
-        this.authorId = authorId;
-    }
-    
 }

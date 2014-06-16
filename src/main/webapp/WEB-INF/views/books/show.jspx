@@ -8,15 +8,11 @@
         <field:display field="language" id="s_com_disertatie_mylibrary_domain_Book_language" object="${book}" z="05NoGtZf/KMjpQEgmhoTgun2DF8="/>
         <field:display field="author" id="s_com_disertatie_mylibrary_domain_Book_author" object="${book}" z="oasxUuifBYsxi6b6+Dze48kHZiQ="/>
         <field:display field="title" id="s_com_disertatie_mylibrary_domain_Book_title" object="${book}" z="How3A2X4r7keXvaNio/sBEMuing="/>
-        <field:display field="categoryId" id="s_com_disertatie_mylibrary_domain_Book_categoryId" object="${book}" z="NLnm4kparnMppw14TAN9A9eyET4="/>
         <field:display field="year" id="s_com_disertatie_mylibrary_domain_Book_year" object="${book}" z="OyFFB6JX8HQ2hjcECc8raw0+FsM="/>
         <field:display field="isbn" id="s_com_disertatie_mylibrary_domain_Book_isbn" object="${book}" z="NnTCU5LoPOOnW9Ye8Xb6KTPb9Vs="/>
-        <field:display field="publisherId" id="s_com_disertatie_mylibrary_domain_Book_publisherId" object="${book}" z="xtFtDsR8q9XyxI68b6dOMVMRnvk="/>
         <field:display field="volume" id="s_com_disertatie_mylibrary_domain_Book_volume" object="${book}" z="nA7dfF4tI4JHbu5NSq43TlOEpCE="/>
         <field:display field="description" id="s_com_disertatie_mylibrary_domain_Book_description" object="${book}" z="cWolueGNFbmU5yYK45bN9kinEVM="/>
         <field:display field="picture" id="s_com_disertatie_mylibrary_domain_Book_picture" object="${book}" z="0p8rNSdTOyHYfeVxGVbiY/m6czU="/>
-        <field:display field="languageId" id="s_com_disertatie_mylibrary_domain_Book_languageId" object="${book}" z="dbA103xHeP1t1O4/uFJtKlQvI1g="/>
         <field:display calendar="true" dateTimePattern="${book_dateadded_date_format}" field="dateAdded" id="s_com_disertatie_mylibrary_domain_Book_dateAdded" object="${book}" z="arylJl8bHIcyKqBMVfVUvzjdhN8="/>
-        <field:display field="authorId" id="s_com_disertatie_mylibrary_domain_Book_authorId" object="${book}" z="YArvx0s6sSoNgt+DSA1cP4FSZig="/>
     </page:show>
 </div>

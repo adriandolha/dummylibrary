@@ -10,22 +10,10 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 privileged aspect Author_Roo_DbManaged {
-    
-    @OneToOne(mappedBy = "author")
-    private Book Author.book;
-    
     @Column(name = "name", length = 45)
     @NotNull
     private String Author.name;
-    
-    public Book Author.getBook() {
-        return book;
-    }
-    
-    public void Author.setBook(Book book) {
-        this.book = book;
-    }
-    
+
     public String Author.getName() {
         return name;
     }

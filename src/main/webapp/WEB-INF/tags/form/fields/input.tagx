@@ -79,7 +79,6 @@
             </c:otherwise>
           </c:choose>
           <br />
-            <c:out value="bla ${sec_field}"/>
           <form:errors cssClass="errors" id="_${sec_field}_error_id" path="${sec_field}" />
         </c:otherwise>
       </c:choose>
