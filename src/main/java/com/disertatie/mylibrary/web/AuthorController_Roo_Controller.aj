@@ -87,9 +87,8 @@ privileged aspect AuthorController_Roo_Controller {
     
     void AuthorController.populateEditForm(Model uiModel, Author author) {
         uiModel.addAttribute("author", author);
-        uiModel.addAttribute("books", Book.findAllBooks());
     }
-    
+
     String AuthorController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {

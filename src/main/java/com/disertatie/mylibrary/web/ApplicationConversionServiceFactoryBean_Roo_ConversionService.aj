@@ -4,7 +4,6 @@
 package com.disertatie.mylibrary.web;
 
 import com.disertatie.mylibrary.domain.Author;
-import com.disertatie.mylibrary.domain.Book;
 import com.disertatie.mylibrary.domain.Category;
 import com.disertatie.mylibrary.domain.Language;
 import com.disertatie.mylibrary.domain.Publisher;
@@ -38,30 +37,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.disertatie.mylibrary.domain.Author>() {
             public com.disertatie.mylibrary.domain.Author convert(String id) {
                 return getObject().convert(getObject().convert(id, Integer.class), Author.class);
-            }
-        };
-    }
-    
-    public Converter<Book, String> ApplicationConversionServiceFactoryBean.getBookToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.disertatie.mylibrary.domain.Book, java.lang.String>() {
-            public String convert(Book book) {
-                return new StringBuilder().append(book.getTitle()).append(' ').append(book.getCategory().getName()).append(' ').append(book.getYear()).append(' ').append(book.getIsbn()).toString();
-            }
-        };
-    }
-    
-    public Converter<Integer, Book> ApplicationConversionServiceFactoryBean.getIdToBookConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, com.disertatie.mylibrary.domain.Book>() {
-            public com.disertatie.mylibrary.domain.Book convert(java.lang.Integer id) {
-                return Book.findBook(id);
-            }
-        };
-    }
-    
-    public Converter<String, Book> ApplicationConversionServiceFactoryBean.getStringToBookConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.disertatie.mylibrary.domain.Book>() {
-            public com.disertatie.mylibrary.domain.Book convert(String id) {
-                return getObject().convert(getObject().convert(id, Integer.class), Book.class);
             }
         };
     }
@@ -166,9 +141,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getAuthorToStringConverter());
         registry.addConverter(getIdToAuthorConverter());
         registry.addConverter(getStringToAuthorConverter());
-        registry.addConverter(getBookToStringConverter());
-        registry.addConverter(getIdToBookConverter());
-        registry.addConverter(getStringToBookConverter());
         registry.addConverter(getCategoryToStringConverter());
         registry.addConverter(getIdToCategoryConverter());
         registry.addConverter(getStringToCategoryConverter());

@@ -4,10 +4,10 @@
 package com.disertatie.mylibrary.domain;
 
 import com.disertatie.mylibrary.domain.Author;
-import org.springframework.beans.factory.annotation.Configurable;
+        import org.springframework.beans.factory.annotation.Configurable;
 
 privileged aspect Author_Roo_Configurable {
-    
+
     declare @type: Author: @Configurable;
-    
+
 }

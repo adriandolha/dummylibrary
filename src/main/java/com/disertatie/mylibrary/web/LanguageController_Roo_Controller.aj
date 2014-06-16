@@ -87,7 +87,6 @@ privileged aspect LanguageController_Roo_Controller {
     
     void LanguageController.populateEditForm(Model uiModel, Language language) {
         uiModel.addAttribute("language", language);
-        uiModel.addAttribute("books", Book.findAllBooks());
     }
     
     String LanguageController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

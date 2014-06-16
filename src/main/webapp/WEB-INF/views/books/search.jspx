@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_disertatie_mylibrary_domain_Book" modelAttribute="book" path="/books/search" versionField="none" z="8YgV8ZJs8izLb61zsIdGk+TrhQo=">
+    <form:search id="fu_com_disertatie_mylibrary_search_Book" modelAttribute="book" label="Search"  path="/books/search" finderName="book" z="8YgV8ZJs8izLb61zsIdGk+TrhQo=">
         <field:select field="category" id="c_com_disertatie_mylibrary_domain_Book_category" itemValue="id" items="${categorys}" path="/categorys" z="J06lFn0imKmYqkHzVFBkgtw3eYQ="/>
         <field:select field="publisher" id="c_com_disertatie_mylibrary_domain_Book_publisher" itemValue="id" items="${publishers}" path="/publishers" z="1ZEq/9YT5kZGrafaaOXab5iMjNQ="/>
         <field:select field="language" id="c_com_disertatie_mylibrary_domain_Book_language" itemValue="id" items="${languages}" path="/languages" z="izljHUqZSU27LxhpuDasVNGMDn0="/>
         <field:select field="author" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" path="/authors" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
-        <field:input field="title" id="c_com_disertatie_mylibrary_domain_Book_title" required="true" z="EcD533Uog/3PBgowvOwQGU148IA="/>
-        <field:input field="year" id="c_com_disertatie_mylibrary_domain_Book_year" required="true" validationMessageCode="field_invalid_integer" z="JYAWDkON4FkXJ2K5wemKr2j4Rhk="/>
+        <field:input field="title" id="c_com_disertatie_mylibrary_domain_Book_title" z="EcD533Uog/3PBgowvOwQGU148IA="/>
+        <field:input field="year" id="c_com_disertatie_mylibrary_domain_Book_year" validationMessageCode="field_invalid_integer" z="JYAWDkON4FkXJ2K5wemKr2j4Rhk="/>
         <field:input field="isbn" id="c_com_disertatie_mylibrary_domain_Book_isbn" z="fdEvw1PuGLR4xLeJJuzWPKFNzzw="/>
         <field:input field="volume" id="c_com_disertatie_mylibrary_domain_Book_volume" z="XpVkDsewvdVPedkWDI9lVhbApnw="/>
         <field:input field="description" id="c_com_disertatie_mylibrary_domain_Book_description" z="WuhjdrRLmP5hoca2u0mUBrkVY4I="/>
         <field:input field="picture" id="c_com_disertatie_mylibrary_domain_Book_picture" z="1C4tqhtoQkOabawHuhDp4hu3lXI="/>
-        <field:datetime dateTimePattern="${book_dateadded_date_format}" field="dateAdded" id="c_com_disertatie_mylibrary_domain_Book_dateAdded" required="true" z="QGQwzmXGdtze5ZxJWI6IDFwAYvc=" disabled="true"/>
-    </form:update>
+        <field:datetime dateTimePattern="${book_dateadded_date_format}" field="dateAdded" id="c_com_disertatie_mylibrary_domain_Book_dateAdded" z="QGQwzmXGdtze5ZxJWI6IDFwAYvc=" />
+    </form:search>
 </div>
