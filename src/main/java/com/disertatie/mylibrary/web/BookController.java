@@ -33,12 +33,16 @@ public class BookController {
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String create(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String create(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) throws Exception {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, book);
             return "books/create";
         }
         uiModel.asMap().clear();
+        Book existingBook = bookRepository.findByTitle(book.getTitle());
+        if(existingBook != null){
+            throw new Exception("Book already exists with title" + book.getTitle());
+        }
         book = bookRepository.saveAndFlush(book);
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);
     }
@@ -65,7 +69,8 @@ public class BookController {
             float nrOfPages = (float) bookRepository.count() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("books", bookRepository.findAll(new Sort(Sort.Direction.fromString(sortOrder), sortFieldName)));
+            Sort sort = sortOrder != null && sortFieldName!= null? new Sort(Sort.Direction.fromString(sortOrder), sortFieldName):null;
+            uiModel.addAttribute("books", bookRepository.findAll(sort));
         }
         return "books/list";
     }
