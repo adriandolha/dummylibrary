@@ -4,7 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_disertatie_mylibrary_domain_Publisher" modelAttribute="publisher" path="/publishers" render="${empty dependencies}" z="6QL0HpzuSbJJhd0jWs3v148l/Iw=">
         <field:input field="name" id="c_com_disertatie_mylibrary_domain_Publisher_name" required="true" z="ASsMRDrIbl4YkMBD/JsJ5xoq7qs="/>
-        <field:input field="description" id="c_com_disertatie_mylibrary_domain_Publisher_description" z="pzMZoigyeZfoTV0XLlDG8prUxGg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_disertatie_mylibrary_domain_Publisher" render="${not empty dependencies}" z="YdGf4NlWp7yhHiOYT1g3LGGzGu8="/>
 </div>

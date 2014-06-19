@@ -4,6 +4,5 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_disertatie_mylibrary_domain_Publisher" modelAttribute="publisher" path="/publishers" versionField="none" z="ysisUtI0reslKrMyW+UNFhhSXUQ=">
         <field:input field="name" id="c_com_disertatie_mylibrary_domain_Publisher_name" required="true" z="ASsMRDrIbl4YkMBD/JsJ5xoq7qs="/>
-        <field:input field="description" id="c_com_disertatie_mylibrary_domain_Publisher_description" z="pzMZoigyeZfoTV0XLlDG8prUxGg="/>
     </form:update>
 </div>

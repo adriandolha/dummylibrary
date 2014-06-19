@@ -4,6 +4,5 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_disertatie_mylibrary_domain_Publisher" object="${publisher}" path="/publishers" z="oksqCBytOSzXbo8/l8c97foqIuo=">
         <field:display field="name" id="s_com_disertatie_mylibrary_domain_Publisher_name" object="${publisher}" z="6jJfsKLd/OqheOFmOgZxSYXdpAU="/>
-        <field:display field="description" id="s_com_disertatie_mylibrary_domain_Publisher_description" object="${publisher}" z="bTaKD3l9u0PtWIEqTCrv2ZcdgtY="/>
     </page:show>
 </div>

@@ -99,9 +99,9 @@ public class BookController {
 
     void populateEditForm(Model uiModel, Book book) {
         uiModel.addAttribute("book", book);
+        uiModel.addAttribute("authors", Author.findAllAuthors());
         uiModel.addAttribute("categorys", Category.findAllCategorys());
         uiModel.addAttribute("publishers", Publisher.findAllPublishers());
-        uiModel.addAttribute("authors", Author.findAllAuthors());
         uiModel.addAttribute("languages", Language.findAllLanguages());
 
     }

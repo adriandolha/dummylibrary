@@ -4,7 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_disertatie_mylibrary_domain_Language" modelAttribute="language" path="/languages" render="${empty dependencies}" z="G+p9LDLKcjU8Y6+YAyve9tGLweU=">
         <field:input field="name" id="c_com_disertatie_mylibrary_domain_Language_name" required="true" z="K3HvONpkmKr0mHFG3rOjR5RZep0="/>
-        <field:input field="description" id="c_com_disertatie_mylibrary_domain_Language_description" z="JgrYsZFnX6p0eiB7T1+NxFAmsoo="/>
     </form:create>
-    <form:dependency dependencies="${dependencies}" id="d_com_disertatie_mylibrary_domain_Language" render="${not empty dependencies}" z="etffVr66Fp9MlVdV1aSDrcqL6MI="/>
-</div>
+     <form:dependency dependencies="${dependencies}" id="d_com_disertatie_mylibrary_domain_Language" render="${not empty dependencies}" z="etffVr66Fp9MlVdV1aSDrcqL6MI="/>
+ </div>

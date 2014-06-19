@@ -14,23 +14,13 @@ privileged aspect Language_Roo_DbManaged {
     @NotNull
     private String Language.name;
     
-    @Column(name = "description", length = 45)
-    private String Language.description;
-
-    public String Language.getName() {
+   public String Language.getName() {
         return name;
     }
     
     public void Language.setName(String name) {
         this.name = name;
     }
-    
-    public String Language.getDescription() {
-        return description;
-    }
-    
-    public void Language.setDescription(String description) {
-        this.description = description;
-    }
+
     
 }

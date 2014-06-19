@@ -13,10 +13,7 @@ privileged aspect Publisher_Roo_DbManaged {
     @Column(name = "name", length = 45)
     @NotNull
     private String Publisher.name;
-    
-    @Column(name = "description", length = 45)
-    private String Publisher.description;
-    
+
     public String Publisher.getName() {
         return name;
     }
@@ -25,12 +22,6 @@ privileged aspect Publisher_Roo_DbManaged {
         this.name = name;
     }
     
-    public String Publisher.getDescription() {
-        return description;
-    }
-    
-    public void Publisher.setDescription(String description) {
-        this.description = description;
-    }
+
     
 }

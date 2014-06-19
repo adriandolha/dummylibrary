@@ -4,6 +4,5 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_disertatie_mylibrary_domain_Language" modelAttribute="language" path="/languages" versionField="none" z="oMf7agWUbmoiCBEB8I4b4fGkM54=">
         <field:input field="name" id="c_com_disertatie_mylibrary_domain_Language_name" required="true" z="K3HvONpkmKr0mHFG3rOjR5RZep0="/>
-        <field:input field="description" id="c_com_disertatie_mylibrary_domain_Language_description" z="JgrYsZFnX6p0eiB7T1+NxFAmsoo="/>
     </form:update>
 </div>

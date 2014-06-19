@@ -5,7 +5,6 @@
     <page:list id="pl_com_disertatie_mylibrary_domain_Publisher" items="${publishers}" z="rUnQIFYlfO+TjLQODc0ieYyLP0Y=">
         <table:table data="${publishers}" id="l_com_disertatie_mylibrary_domain_Publisher" path="/publishers" z="c6q60fSxsxm0TDxHuoJkCiuC16Y=">
             <table:column id="c_com_disertatie_mylibrary_domain_Publisher_name" property="name" z="oLsPD6/KNJQe0Zo17y+X1QhQPTA="/>
-            <table:column id="c_com_disertatie_mylibrary_domain_Publisher_description" property="description" z="Zn5Gw4UmiTRpuJ3SVERqtenVciQ="/>
         </table:table>
     </page:list>
 </div>

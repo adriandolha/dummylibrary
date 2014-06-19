@@ -5,7 +5,6 @@
     <page:list id="pl_com_disertatie_mylibrary_domain_Language" items="${languages}" z="xS4NywqnsTX0n2OZQmzhgWKPO/I=">
         <table:table data="${languages}" id="l_com_disertatie_mylibrary_domain_Language" path="/languages" z="dHGgBYAKJNfeysB6TylLz0fraDA=">
             <table:column id="c_com_disertatie_mylibrary_domain_Language_name" property="name" z="lS/eulUdBpK+rFYoruHmKpu7CAc="/>
-            <table:column id="c_com_disertatie_mylibrary_domain_Language_description" property="description" z="W8o7iar+kXRjXbduTHC23YFPbn4="/>
         </table:table>
     </page:list>
 </div>

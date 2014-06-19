@@ -3,16 +3,18 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_disertatie_mylibrary_domain_Book" object="${book}" path="/books" z="0dlVUqt8GeOSg5i6TWvIDe8k+ps=">
-        <field:display field="category" id="s_com_disertatie_mylibrary_domain_Book_category" object="${book}" z="exxybzb/VlPIcu38f3yau8OqU2w="/>
-        <field:display field="publisher" id="s_com_disertatie_mylibrary_domain_Book_publisher" object="${book}" z="hj8ulSgPWVFtQ6756Gx0ck+XnLs="/>
-        <field:display field="language" id="s_com_disertatie_mylibrary_domain_Book_language" object="${book}" z="05NoGtZf/KMjpQEgmhoTgun2DF8="/>
-        <field:display field="author" id="s_com_disertatie_mylibrary_domain_Book_author" object="${book}" z="oasxUuifBYsxi6b6+Dze48kHZiQ="/>
         <field:display field="title" id="s_com_disertatie_mylibrary_domain_Book_title" object="${book}" z="How3A2X4r7keXvaNio/sBEMuing="/>
+        <field:display field="author" id="s_com_disertatie_mylibrary_domain_Book_author" object="${book}" z="oasxUuifBYsxi6b6+Dze48kHZiQ="/>
         <field:display field="volume" id="s_com_disertatie_mylibrary_domain_Book_volume" object="${book}" z="nA7dfF4tI4JHbu5NSq43TlOEpCE="/>
-        <field:display field="description" id="s_com_disertatie_mylibrary_domain_Book_description" object="${book}" z="cWolueGNFbmU5yYK45bN9kinEVM="/>
-        <field:display field="picture" id="s_com_disertatie_mylibrary_domain_Book_picture" object="${book}" z="0p8rNSdTOyHYfeVxGVbiY/m6czU="/>
-        <field:display calendar="true" dateTimePattern="${book_dateadded_date_format}" field="dateAdded" id="s_com_disertatie_mylibrary_domain_Book_dateAdded" object="${book}" z="arylJl8bHIcyKqBMVfVUvzjdhN8="/>
+        <field:display field="category" id="s_com_disertatie_mylibrary_domain_Book_category" object="${book}" z="exxybzb/VlPIcu38f3yau8OqU2w="/>
         <field:display field="year" id="s_com_disertatie_mylibrary_domain_Book_year" object="${book}" z="OyFFB6JX8HQ2hjcECc8raw0+FsM="/>
         <field:display field="isbn" id="s_com_disertatie_mylibrary_domain_Book_isbn" object="${book}" z="NnTCU5LoPOOnW9Ye8Xb6KTPb9Vs="/>
+        <field:display field="publisher" id="s_com_disertatie_mylibrary_domain_Book_publisher" object="${book}" z="hj8ulSgPWVFtQ6756Gx0ck+XnLs="/>
+        <field:display field="language" id="s_com_disertatie_mylibrary_domain_Book_language" object="${book}" z="05NoGtZf/KMjpQEgmhoTgun2DF8="/>
+        <field:display field="description" id="s_com_disertatie_mylibrary_domain_Book_description" object="${book}" z="cWolueGNFbmU5yYK45bN9kinEVM="/>
+        <field:display field="picture" id="s_com_disertatie_mylibrary_domain_Book_picture" object="${book}" z="0p8rNSdTOyHYfeVxGVbiY/m6czU="/>
+
+        <field:display calendar="true" dateTimePattern="${book_dateadded_date_format}" field="dateAdded" id="s_com_disertatie_mylibrary_domain_Book_dateAdded" object="${book}" z="arylJl8bHIcyKqBMVfVUvzjdhN8="/>
+
     </page:show>
 </div>

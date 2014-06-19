@@ -1,0 +1,36 @@
+<aspectj>
+<aspects>
+<aspect name="com.disertatie.mylibrary.domain.Category_Roo_ToString"/>
+<aspect name="com.disertatie.mylibrary.web.AuthorController_Roo_Controller"/>
+<aspect name="com.disertatie.mylibrary.domain.Category_Roo_Configurable"/>
+<aspect name="com.disertatie.mylibrary.domain.Author_Roo_ToString"/>
+<aspect name="com.disertatie.mylibrary.web.UserController_Roo_Controller"/>
+<aspect name="com.disertatie.mylibrary.domain.User_Roo_Jpa_Entity"/>
+<aspect name="com.disertatie.mylibrary.web.CategoryController_Roo_Controller"/>
+<aspect name="com.disertatie.mylibrary.domain.Author_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.disertatie.mylibrary.domain.Publisher_Roo_Jpa_Entity"/>
+<aspect name="com.disertatie.mylibrary.domain.Publisher_Roo_DbManaged"/>
+<aspect name="com.disertatie.mylibrary.domain.Publisher_Roo_ToString"/>
+<aspect name="com.disertatie.mylibrary.web.PublisherController_Roo_Controller"/>
+<aspect name="com.disertatie.mylibrary.domain.Author_Roo_DbManaged"/>
+<aspect name="com.disertatie.mylibrary.domain.User_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.disertatie.mylibrary.domain.Category_Roo_DbManaged"/>
+<aspect name="com.disertatie.mylibrary.domain.Language_Roo_ToString"/>
+<aspect name="com.disertatie.mylibrary.domain.Category_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.disertatie.mylibrary.domain.Category_Roo_Jpa_Entity"/>
+<aspect name="com.disertatie.mylibrary.domain.Language_Roo_DbManaged"/>
+<aspect name="com.disertatie.mylibrary.domain.User_Roo_Configurable"/>
+<aspect name="com.disertatie.mylibrary.domain.Author_Roo_Jpa_Entity"/>
+<aspect name="com.disertatie.mylibrary.domain.User_Roo_DbManaged"/>
+<aspect name="com.disertatie.mylibrary.domain.User_Roo_ToString"/>
+<aspect name="com.disertatie.mylibrary.domain.Language_Roo_Configurable"/>
+<aspect name="com.disertatie.mylibrary.domain.Publisher_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.disertatie.mylibrary.domain.Author_Roo_Configurable"/>
+<aspect name="com.disertatie.mylibrary.domain.Language_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.disertatie.mylibrary.domain.Publisher_Roo_Configurable"/>
+<aspect name="com.disertatie.mylibrary.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.disertatie.mylibrary.domain.Language_Roo_Jpa_Entity"/>
+<aspect name="com.disertatie.mylibrary.web.LanguageController_Roo_Controller"/>
+</aspects>
+</aspectj>
+

@@ -68,7 +68,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Language, String> ApplicationConversionServiceFactoryBean.getLanguageToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.disertatie.mylibrary.domain.Language, java.lang.String>() {
             public String convert(Language language) {
-                return new StringBuilder().append(language.getName()).append(' ').append(language.getDescription()).toString();
+                return new StringBuilder().append(language.getName()).toString();
             }
         };
     }
@@ -92,7 +92,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Publisher, String> ApplicationConversionServiceFactoryBean.getPublisherToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.disertatie.mylibrary.domain.Publisher, java.lang.String>() {
             public String convert(Publisher publisher) {
-                return new StringBuilder().append(publisher.getName()).append(' ').append(publisher.getDescription()).toString();
+                return new StringBuilder().append(publisher.getName()).append(' ').toString();
             }
         };
     }
