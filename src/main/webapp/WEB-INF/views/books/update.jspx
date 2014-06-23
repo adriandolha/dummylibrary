@@ -2,7 +2,10 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_disertatie_mylibrary_domain_Book" modelAttribute="book" path="/books" versionField="none" z="8YgV8ZJs8izLb61zsIdGk+TrhQo=">
+    <form:update id="fu_com_disertatie_mylibrary_domain_Book" modelAttribute="book" path="/books/update" versionField="none" multipart="true" z="8YgV8ZJs8izLb61zsIdGk+TrhQo=">
+        <img src="${book.id}/image" height="256px"/>
+        <field:input field="picture" type="file" id="c_com_disertatie_mylibrary_domain_Book_picture" z="user-managed"/>
+        <field:input field="contentType" id="c_com_disertatie_mylibrary_domain_Book_contentType" z="user-managed" render="false"/>
         <field:input field="title" id="c_com_disertatie_mylibrary_domain_Book_title" required="true" z="EcD533Uog/3PBgowvOwQGU148IA="/>
         <field:select field="authors" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" path="/authors" multiple="true" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
         <field:input field="volume" id="c_com_disertatie_mylibrary_domain_Book_volume" z="XpVkDsewvdVPedkWDI9lVhbApnw="/>
@@ -12,8 +15,6 @@
         <field:select field="publisher" id="c_com_disertatie_mylibrary_domain_Book_publisher" itemValue="id" items="${publishers}" path="/publishers" z="1ZEq/9YT5kZGrafaaOXab5iMjNQ="/>
         <field:select field="language" id="c_com_disertatie_mylibrary_domain_Book_language" itemValue="id" items="${languages}" path="/languages" z="izljHUqZSU27LxhpuDasVNGMDn0="/>
         <field:input field="description" id="c_com_disertatie_mylibrary_domain_Book_description" z="WuhjdrRLmP5hoca2u0mUBrkVY4I="/>
-        <field:input field="picture" id="c_com_disertatie_mylibrary_domain_Book_picture" z="1C4tqhtoQkOabawHuhDp4hu3lXI="/>
-
         <field:datetime dateTimePattern="${book_dateadded_date_format}" disabled="true" field="dateAdded" id="c_com_disertatie_mylibrary_domain_Book_dateAdded" required="true" z="user-managed"/>
 
     </form:update>

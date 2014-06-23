@@ -7,9 +7,10 @@
 <definition extends="default" name="users/show">
         <put-attribute name="body" value="/WEB-INF/views/users/show.jspx"/>
     </definition>
-<definition extends="default" name="users/create">
-        <put-attribute name="body" value="/WEB-INF/views/users/create.jspx"/>
-    </definition>
+<definition name="users/create" template="/WEB-INF/views/users/create.jspx">
+    <put-attribute name="header" value="/WEB-INF/views/header.jspx" />
+    <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
+</definition>
 <definition extends="default" name="users/update">
         <put-attribute name="body" value="/WEB-INF/views/users/update.jspx"/>
     </definition>

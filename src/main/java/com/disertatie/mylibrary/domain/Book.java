@@ -48,8 +48,11 @@ public class Book {
     @Column(name = "description", length = 45)
     private String description;
 
-    @Column(name = "picture", length = 45)
-    private String picture;
+    String contentType;
+    @Column(name = "picture")
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] picture;
 
     @Column(name = "dateAdded")
     @Temporal(TemporalType.TIMESTAMP)
@@ -112,14 +115,6 @@ public class Book {
         this.description = description;
     }
 
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
     public Calendar getDateAdded() {
         return dateAdded;
     }
@@ -150,6 +145,22 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     @Override

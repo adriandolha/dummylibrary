@@ -1,6 +1,7 @@
 package com.disertatie.mylibrary.web;
 import com.disertatie.mylibrary.domain.*;
 import com.disertatie.mylibrary.repository.*;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -10,12 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.beans.PropertyEditorSupport;
+import java.io.ByteArrayInputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
 @RequestMapping("/books")
@@ -28,12 +34,13 @@ public class BookController {
     BookRepository bookRepository;
     @InitBinder
     public void init(final WebDataBinder dataBinder) {
-
+        // Convert multipart object to byte[]
+        dataBinder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
         dataBinder.registerCustomEditor(Book.class, new BookPropertyEditor());
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String create(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) throws Exception {
+    public String create(@RequestParam("picture") MultipartFile multipartFile, @Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) throws Exception {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, book);
             return "books/create";
@@ -43,6 +50,8 @@ public class BookController {
         if(existingBook != null){
             throw new Exception("Book already exists with title" + book.getTitle());
         }
+        //book.setPicture(multipartFile.getBytes());
+        book.setContentType(multipartFile.getContentType());
         book = bookRepository.saveAndFlush(book);
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);
     }
@@ -60,6 +69,25 @@ public class BookController {
         return "books/show";
     }
 
+    @RequestMapping(value = "/{id}/image", method = RequestMethod.GET)
+    public String showImage(@PathVariable("id") Long id, HttpServletResponse response, Model model) {
+        Book book = bookService.findBook(id);
+        if (book != null) {
+            byte[] image = book.getPicture();
+            if (image != null) {
+                try {
+                    response.setContentType(book.getContentType());
+                    OutputStream out = response.getOutputStream();
+                    IOUtils.copy(new ByteArrayInputStream(image), out);
+                    out.flush();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
     @RequestMapping(produces = "text/html")
     public String list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         if (page != null || size != null) {
@@ -75,13 +103,14 @@ public class BookController {
         return "books/list";
     }
 
-    @RequestMapping(method = RequestMethod.PUT, produces = "text/html")
-    public String update(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    @RequestMapping(value = "/update", produces = "text/html")
+    public String update(@RequestParam("picture") MultipartFile multipartFile, @Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, book);
             return "books/update";
         }
         uiModel.asMap().clear();
+        book.setContentType(multipartFile.getContentType());
         bookRepository.saveAndFlush(book);
         return "redirect:/books/" + encodeUrlPathSegment(book.getId().toString(), httpServletRequest);
     }
