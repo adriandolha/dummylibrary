@@ -20,17 +20,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PublisherController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String PublisherController.create(@Valid Publisher publisher, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, publisher);
-            return "publishers/create";
-        }
-        uiModel.asMap().clear();
-        publisher.persist();
-        return "redirect:/publishers/" + encodeUrlPathSegment(publisher.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String PublisherController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Publisher());

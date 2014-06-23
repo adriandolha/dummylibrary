@@ -19,18 +19,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect LanguageController_Roo_Controller {
-    
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String LanguageController.create(@Valid Language language, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, language);
-            return "languages/create";
-        }
-        uiModel.asMap().clear();
-        language.persist();
-        return "redirect:/languages/" + encodeUrlPathSegment(language.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String LanguageController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Language());

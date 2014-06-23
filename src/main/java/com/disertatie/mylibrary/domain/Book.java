@@ -3,6 +3,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Calendar;
+import java.util.List;
 
 @Entity
 @Table
@@ -24,9 +25,12 @@ public class Book {
     @JoinColumn(name = "languageId", nullable = false)
     private Language language;
 
-    @OneToOne
-    @JoinColumn(name = "authorId", nullable = false)
-    private Author author;
+    @ManyToMany
+    @JoinTable(
+            name="BookAuthors",
+            joinColumns={@JoinColumn(name="bookId", referencedColumnName="id")},
+            inverseJoinColumns={@JoinColumn(name="authorId", referencedColumnName="id")})
+    private List<Author> authors;
 
     @Column(name = "year")
     @NotNull
@@ -76,12 +80,12 @@ public class Book {
         this.language = language;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
     }
 
     public String getTitle() {

@@ -7,6 +7,7 @@ import org.hibernate.criterion.LikeExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +21,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 @RequestMapping("/books/search")
 public class BookSearchController {
+    public enum SearchType{TITLE("title"), AUTHOR("author"), CATEGORY("category");
+        String title;
+        SearchType(String title) {
+            this.title = title;
+        }
+
+        @Override
+        public String toString() {
+            return title;
+        }
+    }
     public static final String LIKE_EXPRESSION = "%%%s%%";
     @Autowired
     BookService bookService;
@@ -33,14 +46,26 @@ public class BookSearchController {
     @PersistenceContext
     public EntityManager entityManager;
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String search(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    public String search(BookSearch bookSearch, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        SearchType searchType = SearchType.valueOf(bookSearch.getSearchType().toUpperCase());
         int sizeNo = 10;
         Integer page = 1;
         JPAQuery query = new JPAQuery(entityManager);
         QBook books = QBook.book;
-        List<Book> resultBooks = query.from(books).where(
-                books.title.like(String.format(LIKE_EXPRESSION, book.getTitle())))
-        .list(books);
+        List<Book> resultBooks = null;
+        switch (searchType){
+            case TITLE:
+                resultBooks = query.from(books).where(
+                        books.title.like(String.format(LIKE_EXPRESSION, bookSearch.getValue())))
+                        .list(books);
+                break;
+            case AUTHOR:
+                resultBooks = bookRepository.findByAuthorLike(bookSearch.getValue());
+                break;
+            case CATEGORY:
+                resultBooks = bookRepository.findByCategoryLike(bookSearch.getValue());
+                break;
+        }
         uiModel.addAttribute("books", resultBooks);
         float nrOfPages = (float) resultBooks.size() / sizeNo;
         uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
@@ -49,7 +74,7 @@ public class BookSearchController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String searchForm(Model uiModel) {
-        uiModel.addAttribute(new Book());
+        uiModel.addAttribute(new BookSearch());
         return "books/search";
     }
 
@@ -77,6 +102,11 @@ public class BookSearchController {
     @ModelAttribute(value = "languages")
     public List<Language> getLanguages(){
         return Language.findAllLanguages();
+    }
+
+    @ModelAttribute(value = "searchTypes")
+    public List<String> getSearchTypes(){
+        return Arrays.asList(new String[]{"title", "author", "category"});
     }
 
     @ModelAttribute(value = "publishers")

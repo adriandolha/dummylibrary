@@ -19,18 +19,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect CategoryController_Roo_Controller {
-    
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String CategoryController.create(@Valid Category category, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, category);
-            return "categorys/create";
-        }
-        uiModel.asMap().clear();
-        category.persist();
-        return "redirect:/categorys/" + encodeUrlPathSegment(category.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", produces = "text/html")
     public String CategoryController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Category());

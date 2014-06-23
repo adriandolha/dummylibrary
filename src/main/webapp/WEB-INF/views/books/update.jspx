@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_disertatie_mylibrary_domain_Book" modelAttribute="book" path="/books" versionField="none" z="8YgV8ZJs8izLb61zsIdGk+TrhQo=">
         <field:input field="title" id="c_com_disertatie_mylibrary_domain_Book_title" required="true" z="EcD533Uog/3PBgowvOwQGU148IA="/>
-        <field:select field="author" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" path="/authors" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
+        <field:select field="authors" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" path="/authors" multiple="true" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
         <field:input field="volume" id="c_com_disertatie_mylibrary_domain_Book_volume" z="XpVkDsewvdVPedkWDI9lVhbApnw="/>
         <field:select field="category" id="c_com_disertatie_mylibrary_domain_Book_category" itemValue="id" items="${categorys}" path="/categorys" z="J06lFn0imKmYqkHzVFBkgtw3eYQ="/>
         <field:input field="year" id="c_com_disertatie_mylibrary_domain_Book_year" required="true" validationMessageCode="field_invalid_integer" z="JYAWDkON4FkXJ2K5wemKr2j4Rhk="/>

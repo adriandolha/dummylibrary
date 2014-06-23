@@ -4,17 +4,13 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_disertatie_mylibrary_domain_Book" modelAttribute="book" path="/books" render="${empty dependencies}" z="X6ZFqKARGQAU2ZsPeakGgVA3VEg=">
         <field:input disableFormBinding="true" field="title" id="c_com_disertatie_mylibrary_domain_Book_title" required="true" z="user-managed"/>
-        <field:select field="author" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" path="/authors" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
-        <field:input field="authorId" id="c_com_disertatie_mylibrary_domain_Book_authorId" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
+        <field:select field="authors" id="c_com_disertatie_mylibrary_domain_Book_author" itemValue="id" items="${authors}" multiple="true" path="/authors" z="Xix+QOUAH9VtjQg4AI0nGJ0NZVo="/>
         <field:input field="volume" id="c_com_disertatie_mylibrary_domain_Book_volume" z="XpVkDsewvdVPedkWDI9lVhbApnw="/>
         <field:select field="category" id="c_com_disertatie_mylibrary_domain_Book_category" itemLabel="name" itemValue="id" items="${categorys}" path="/categorys" z="user-managed"/>
-        <field:input field="categoryId" id="c_com_disertatie_mylibrary_domain_Book_categoryId" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
         <field:input field="year" id="c_com_disertatie_mylibrary_domain_Book_year" required="true" validationMessageCode="field_invalid_integer" z="JYAWDkON4FkXJ2K5wemKr2j4Rhk="/>
         <field:input field="isbn" id="c_com_disertatie_mylibrary_domain_Book_isbn" z="fdEvw1PuGLR4xLeJJuzWPKFNzzw="/>
         <field:select field="publisher" id="c_com_disertatie_mylibrary_domain_Book_publisher" itemValue="id" items="${publishers}" path="/publishers" z="1ZEq/9YT5kZGrafaaOXab5iMjNQ="/>
-        <field:input field="publisherId" id="c_com_disertatie_mylibrary_domain_Book_publisherId" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
         <field:select field="language" id="c_com_disertatie_mylibrary_domain_Book_language" itemLabel="name" itemValue="id" items="${languages}" path="/languages" z="user-managed"/>
-        <field:input field="languageId" id="c_com_disertatie_mylibrary_domain_Book_languageId" render="false" required="true" z="user-managed"/>
         <field:input field="description" id="c_com_disertatie_mylibrary_domain_Book_description" z="WuhjdrRLmP5hoca2u0mUBrkVY4I="/>
         <field:input field="picture" id="c_com_disertatie_mylibrary_domain_Book_picture" z="1C4tqhtoQkOabawHuhDp4hu3lXI="/>
 

@@ -20,7 +20,7 @@
             <menu:item id="i_language_new" messageCode="global_menu_new" url="/languages?form" z="9yc3RoivxaGEpXsFAuD43cOPbXo="/>
             <menu:item id="i_language_list" messageCode="global_menu_list" url="/languages?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ElqbZy+53HRFVQ8s2jdG81J9A5w="/>
         </menu:category>
-        <menu:category id="c_user" z="uoTSf/uIZ821ZppidzS9aO776yk=">
+        <menu:category id="c_user" z="uoTSf/uIZ821ZppidzS9aO776yk=" render="false">
             <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form" z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
             <menu:item id="i_user_list" messageCode="global_menu_list" url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
         </menu:category>

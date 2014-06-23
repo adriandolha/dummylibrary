@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_disertatie_mylibrary_domain_Book" object="${book}" path="/books" z="0dlVUqt8GeOSg5i6TWvIDe8k+ps=">
         <field:display field="title" id="s_com_disertatie_mylibrary_domain_Book_title" object="${book}" z="How3A2X4r7keXvaNio/sBEMuing="/>
-        <field:display field="author" id="s_com_disertatie_mylibrary_domain_Book_author" object="${book}" z="oasxUuifBYsxi6b6+Dze48kHZiQ="/>
+        <field:display field="authors" id="s_com_disertatie_mylibrary_domain_Book_author" object="${book}" z="oasxUuifBYsxi6b6+Dze48kHZiQ="/>
         <field:display field="volume" id="s_com_disertatie_mylibrary_domain_Book_volume" object="${book}" z="nA7dfF4tI4JHbu5NSq43TlOEpCE="/>
         <field:display field="category" id="s_com_disertatie_mylibrary_domain_Book_category" object="${book}" z="exxybzb/VlPIcu38f3yau8OqU2w="/>
         <field:display field="year" id="s_com_disertatie_mylibrary_domain_Book_year" object="${book}" z="OyFFB6JX8HQ2hjcECc8raw0+FsM="/>
