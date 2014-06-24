@@ -27,7 +27,7 @@ privileged aspect UserController_Roo_Controller {
         }
         uiModel.asMap().clear();
         user.persist();
-        return "redirect:/users/" + encodeUrlPathSegment(user.getId().toString(), httpServletRequest);
+        return "redirect:/login";
     }
     
     @RequestMapping(params = "form", produces = "text/html")

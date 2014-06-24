@@ -24,7 +24,7 @@
             <jsp:output omit-xml-declaration="yes"/>
             <form:create id="fc_com_disertatie_mylibrary_domain_User" modelAttribute="user" path="/users" render="${empty dependencies}" z="K804+LGE3YRTGfvl0IztE3IOdqg=">
                 <field:input field="username" id="c_com_disertatie_mylibrary_domain_User_username" required="true" z="hljTBbxyMpIATZxUkUMCWOntf8Y="/>
-                <field:input field="password" id="c_com_disertatie_mylibrary_domain_User_password" required="true" z="BuoGBGD9dY0fHTGbXRjC/vaL5uI="/>
+                <field:input field="password" type="password" id="c_com_disertatie_mylibrary_domain_User_password" required="true" z="BuoGBGD9dY0fHTGbXRjC/vaL5uI="/>
                 <field:input field="firstName" id="c_com_disertatie_mylibrary_domain_User_firstName" z="iagN+y1Fuw6mxybgYk4fg/QZDUE="/>
                 <field:input field="lastName" id="c_com_disertatie_mylibrary_domain_User_lastName" z="Sq7Sk7fsSq7aAoy/+OcAFsBTza4="/>
                 <field:input field="email" id="c_com_disertatie_mylibrary_domain_User_email" validationMessageCode="field_invalid_email" z="+QATKZZosEzNIeG6uiN+jZglJJA="/>
