@@ -9,8 +9,8 @@
         </menu:category>
         <menu:category id="c_book" z="WxiVAJUlwzLkYi6u7YpEjYOT82A=">
             <menu:item id="i_book_new" messageCode="global_menu_new" url="/books?form" z="gAIxvrBOHQC/N0HWTGD46jzwyk8="/>
-            <menu:item id="i_book_list" messageCode="global_menu_list" url="/books?page=1&amp;size=${empty param.size ? 10 : param.size}" z="VM0+BikyiEq8a8S+W6bSp3FXQFo="/>
-            <menu:item id="i_book_search" messageCode="global_menu_search" url="/books/search" z="user-managed"/>
+            <menu:item id="i_book_list" messageCode="global_menu_list" url="/books?page=1&amp;size=${empty param.size ? 5 : param.size}" z="VM0+BikyiEq8a8S+W6bSp3FXQFo="/>
+            <menu:item id="i_book_search" messageCode="global_menu_search" url="/books/search/form?page=1&amp;size=${empty param.size ? 5 : param.size}" z="user-managed"/>
         </menu:category>
         <menu:category id="c_category" z="kY676wLbZKc59UbcUGM8ogjOGOc=">
             <menu:item id="i_category_new" messageCode="global_menu_new" url="/categorys?form" z="Xqz6msHtFFIlT4/UwJALJOYTD1I="/>
