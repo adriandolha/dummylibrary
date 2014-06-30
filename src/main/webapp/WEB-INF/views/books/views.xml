@@ -4,7 +4,10 @@
     <definition extends="default" name="books/list">
         <put-attribute name="body" value="/WEB-INF/views/books/list.jspx"/>
     </definition>
-    <definition extends="default" name="books/search">
+    <definition extends="default" name="books/searchList">
+        <put-attribute name="body" value="/WEB-INF/views/books/searchList.jspx"/>
+    </definition>
+    <definition extends="default" name="books/searchForm">
         <put-attribute name="body" value="/WEB-INF/views/books/search.jspx"/>
     </definition>
 <definition extends="default" name="books/show">

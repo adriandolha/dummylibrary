@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_disertatie_mylibrary_domain_Book" items="${books}" z="7eSElKx+e6H5C96RL/fNzXrkJhQ=">
+        <table:table data="${books}" id="l_com_disertatie_mylibrary_domain_Book" path="/books/search" z="yG83ypvJfrmSISyxo0u85Bv0HUE=">
+            <table:column id="c_com_disertatie_mylibrary_domain_Book_title" property="title" z="SHQ7RH+wwBX3dbAj9ZgISwy9BRs="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_Book_author" property="authors" z="aVmdIhx39gxFshrdcvJwZvxaHOA="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_Book_category" property="category" z="CCD/F2GncPKNaAklOhbP2Q6XoKc="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_Book_publisher" property="publisher" z="KAR6cK2IGga0ykG8KPyxzMk4maU="/>
+            <table:column id="c_com_disertatie_mylibrary_domain_Book_language" property="language" z="cJlYDii12Svk0Iw25I7aU62qFBQ="/>
+        </table:table>
+    </page:list>
+</div>

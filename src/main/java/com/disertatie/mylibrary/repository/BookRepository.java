@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
    public Book findByTitle(String title);
-    @Query( value = "select book.* from book book " +
-            " inner join author author on book.authorId=author.id" +
-            " WHERE author.name like %:author%", nativeQuery = true)
+    @Query( value = "select book.*from book book, author author, bookauthors ba " +
+            "WHERE ba.bookId=book.id and ba.authorId=author.id and ba.bookId=book.id "+
+            "and author.name like %:author%", nativeQuery = true)
     public List<Book> findByAuthorLike(@Param("author") String author);
 
     @Query( value = "select book.* from book book " +
