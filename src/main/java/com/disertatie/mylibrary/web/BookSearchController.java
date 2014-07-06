@@ -39,7 +39,8 @@ public class BookSearchController {
         List<Book> resultBooks = bookService.getBooks(bookSearch);
         int sizeNo = 5;
         float nrOfPages = (float) resultBooks.size() / sizeNo;
-        uiModel.addAttribute("books", resultBooks.subList(0, 5));
+        int toIndex = Math.min(5, resultBooks.size());
+        uiModel.addAttribute("books", resultBooks.subList(0, toIndex));
         uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         uiModel.addAttribute("size", sizeNo);
         return "books/searchList";
