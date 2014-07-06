@@ -103,7 +103,7 @@ public class BookSearchController {
 
     @ModelAttribute(value = "searchTypes")
     public List<String> getSearchTypes(){
-        return Arrays.asList(new String[]{"title", "author", "category"});
+        return Arrays.asList(new String[]{"title", "author", "category", "language", "publisher"});
     }
 
     @ModelAttribute(value = "publishers")

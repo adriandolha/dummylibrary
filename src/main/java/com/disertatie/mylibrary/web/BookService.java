@@ -17,7 +17,8 @@ import java.util.List;
 @Service
 public class BookService {
     public static final String LIKE_EXPRESSION = "%%%s%%";
-    public enum SearchType{TITLE("title"), AUTHOR("author"), CATEGORY("category");
+    public enum SearchType{TITLE("title"), AUTHOR("author"), CATEGORY("category"), LANGUAGE("language"),
+        PUBLISHER("publisher");
         String title;
         SearchType(String title) {
             this.title = title;
@@ -73,6 +74,12 @@ public class BookService {
                 break;
             case CATEGORY:
                 resultBooks = bookRepository.findByCategoryLike(bookSearch.getValue());
+                break;
+            case LANGUAGE:
+                resultBooks = bookRepository.findByLanguageLike(bookSearch.getValue());
+                break;
+            case PUBLISHER:
+                resultBooks = bookRepository.findByPublisherLike(bookSearch.getValue());
                 break;
         }
         return resultBooks;

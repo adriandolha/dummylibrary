@@ -18,4 +18,14 @@ public interface BookRepository extends JpaRepository<Book, Long> {
             " inner join category category on book.categoryId=category.id" +
             " WHERE category.name like %:category%", nativeQuery = true)
     public List<Book> findByCategoryLike(@Param("category") String category);
+
+    @Query( value = "select book.* from book book " +
+            " inner join language language on book.languageId=language.id" +
+            " WHERE language.name like %:language%", nativeQuery = true)
+    public List<Book> findByLanguageLike(@Param("language") String language);
+
+    @Query( value = "select book.* from book book " +
+            " inner join publisher publisher on book.publisherId=publisher.id" +
+            " WHERE publisher.name like %:publisher%", nativeQuery = true)
+    public List<Book> findByPublisherLike(@Param("publisher") String publisher);
 }
