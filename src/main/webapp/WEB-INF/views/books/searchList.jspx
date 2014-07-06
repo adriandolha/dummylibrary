@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_disertatie_mylibrary_domain_Book" items="${books}" z="7eSElKx+e6H5C96RL/fNzXrkJhQ=">
-        <table:table data="${books}" id="l_com_disertatie_mylibrary_domain_Book" path="/books/search/list" z="yG83ypvJfrmSISyxo0u85Bv0HUE=">
+        <table:table data="${books}" id="l_com_disertatie_mylibrary_domain_Book" path="/books" z="yG83ypvJfrmSISyxo0u85Bv0HUE=">
             <table:column id="c_com_disertatie_mylibrary_domain_Book_title" property="title" z="SHQ7RH+wwBX3dbAj9ZgISwy9BRs="/>
             <table:column id="c_com_disertatie_mylibrary_domain_Book_author" property="authors" z="aVmdIhx39gxFshrdcvJwZvxaHOA="/>
             <table:column id="c_com_disertatie_mylibrary_domain_Book_category" property="category" z="CCD/F2GncPKNaAklOhbP2Q6XoKc="/>
